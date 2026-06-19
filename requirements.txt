@@ -2,7 +2,7 @@ robotframework==7.1.1
 robotframework-browser==19.5.1
 robotframework-appiumlibrary==2.1.0
 robotframework-requests==0.9.7
-Appium-Python-Client==4.2.1
+Appium-Python-Client==3.2.1
 PyYAML==6.0.2
 requests==2.32.3
 robotframework-pabot==4.0.0
