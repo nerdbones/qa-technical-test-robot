@@ -348,19 +348,6 @@ A pipeline executa os testes web em matriz para:
 
 Os relatórios são publicados como artefatos da execução. Essa é a principal evidência automatizada da execução web em CI.
 
-## Checklist antes da publicação no GitHub
-
-Antes de enviar o link do repositório, recomenda-se conferir:
-
-- `robot -d results/web/QA1 -v ENV:QA1 tests/web` executa com sucesso;
-- `robot -d results/web/QA2 -v ENV:QA2 tests/web` executa com sucesso;
-- `robot -d results/web/QA3 -v ENV:QA3 tests/web` executa com sucesso;
-- `README.md` explica instalação, execução e decisões técnicas;
-- `docs/manual-tests/` contém cenários manuais e bug report;
-- `config/environments.yaml` contém QA1, QA2 e QA3;
-- `.github/workflows/robot-web-tests.yml` está presente;
-- resultados locais em `results/` não foram versionados indevidamente.
-
 ## Comandos úteis
 
 ```bash
