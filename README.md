@@ -361,7 +361,7 @@ make mobile-qa1
 
 ## Decisões técnicas
 
-As decisões de arquitetura, limitações e melhorias futuras estão descritas em:
+As decisões de arquitetura e limitações estão descritas em:
 
 ```text
 docs/technical-decisions.md
@@ -376,10 +376,3 @@ O comando `robot --dryrun` valida se a suíte possui keywords e sintaxe corretas
 - O ExpandTesting Notes App é uma aplicação pública, portanto depende de disponibilidade externa.
 - Os ambientes QA1, QA2 e QA3 são representados por configuração e massa dinâmica, pois o site público não fornece ambientes reais separados.
 - A suíte mobile exige Appium Server e um dispositivo/emulador Android configurado localmente.
-
-## Melhorias futuras
-
-- Expandir a suíte mobile para cobrir CRUD completo.
-- Adicionar execução paralela com Pabot.
-- Integrar relatório Allure.
-- Adicionar validações de contrato para a API do Notes App.
