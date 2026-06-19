@@ -2,9 +2,11 @@
 
 ## Uso do ExpandTesting Notes App
 
-O desafio descreve uma tela de cadastro/listagem de equipamentos, porém não fornece uma aplicação real nem URLs específicas para QA1, QA2 e QA3. Para manter a entrega executável, foi escolhido o ExpandTesting Notes App como sistema sob teste.
+Para manter o projeto executável e independente, foi escolhido o site público de prática de automação **ExpandTesting Notes App** como sistema sob avaliação.
 
 No projeto, cada nota representa um equipamento. O título da nota representa o nome do equipamento, a descrição representa detalhes editáveis e o status `completed` representa o status operacional do registro.
+
+Essa adaptação permite demonstrar arquitetura de automação, massa dinâmica, execução multiambiente e organização de testes sem depender de uma aplicação privada ou de dados externos ao repositório.
 
 ## Estratégia multiambiente
 
@@ -37,10 +39,9 @@ Isso reduz dependência de massa fixa e evita colisão entre execuções.
 
 ## Uso combinado de API e UI
 
-A API é utilizada para preparar massa de teste de forma rápida e estável. A interface web é utilizada para validar a experiência do usuário, busca, exibição dos dados e status.
+A API é utilizada para preparar massa de teste de forma rápida e estável. A interface web é utilizada para validar a experiência do usuário, exibição dos dados, edição refletida e status.
 
 Essa decisão reduz fragilidade da automação sem eliminar a cobertura da camada visual.
-
 
 ## Estratégia mobile
 
@@ -56,8 +57,8 @@ Por esse motivo, a pipeline CI/CD executa apenas a suíte web. A automação mob
 
 ## Limitações conhecidas
 
-- O ExpandTesting é uma aplicação pública, portanto pode sofrer indisponibilidade externa.
-- Os ambientes QA1, QA2 e QA3 são simulados por configuração, pois o site público não fornece ambientes reais separados.
+- O ExpandTesting Notes App é uma aplicação pública, portanto pode sofrer indisponibilidade externa.
+- Os ambientes QA1, QA2 e QA3 são representados por configuração e massa dinâmica, pois o site público não fornece ambientes reais separados.
 - A suíte mobile exige Appium Server e dispositivo/emulador Android configurado localmente.
 
 ## Melhorias futuras
@@ -66,3 +67,4 @@ Por esse motivo, a pipeline CI/CD executa apenas a suíte web. A automação mob
 - Adicionar execução paralela com Pabot.
 - Publicar evidências automaticamente como artefatos no GitHub Actions.
 - Integrar relatório Allure.
+- Adicionar validações de contrato para a API do Notes App.

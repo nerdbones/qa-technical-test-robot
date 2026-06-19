@@ -1,8 +1,10 @@
-# Execution Summary
+# Resumo de Execução
 
-## Web execution
+Este documento resume como as evidências de execução são geradas e onde devem ser consultadas.
 
-The web suite is designed to run for the three configured environments:
+## Execução web
+
+A suíte web foi projetada para ser executada nos três ambientes configurados:
 
 ```bash
 robot -d results/web/QA1 -v ENV:QA1 tests/web
@@ -10,37 +12,39 @@ robot -d results/web/QA2 -v ENV:QA2 tests/web
 robot -d results/web/QA3 -v ENV:QA3 tests/web
 ```
 
-The same execution can be triggered with:
+A mesma execução pode ser iniciada com:
 
 ```bash
 bash scripts/run_web_all_envs.sh
 ```
 
-For each execution, Robot Framework generates:
+Para cada execução, o Robot Framework gera:
 
-- `log.html`
-- `report.html`
-- `output.xml`
-- validation screenshots
+- `log.html`;
+- `report.html`;
+- `output.xml`;
+- capturas de tela de validação.
 
-## CI evidence
+## Evidências em CI
 
-The GitHub Actions workflow runs the web suite in a matrix for QA1, QA2 and QA3 and uploads Robot Framework reports as workflow artifacts.
+O workflow do GitHub Actions executa a suíte web em matriz para QA1, QA2 e QA3. Ao final da execução, os relatórios do Robot Framework são publicados como artefatos do workflow.
 
-## Mobile execution
+Essa estratégia evita versionar relatórios temporários no repositório e mantém as evidências associadas à execução real da pipeline.
 
-The mobile suite is available at:
+## Execução mobile
+
+A suíte mobile está disponível em:
 
 ```text
 tests/mobile/mobile_equipment_flow.robot
 ```
 
-It requires local Android infrastructure:
+Ela requer infraestrutura Android local:
 
 - Appium Server;
 - Android SDK;
-- `ANDROID_HOME` or `ANDROID_SDK_ROOT`;
-- Android emulator or physical Android device;
-- Chrome installed on the Android device.
+- `ANDROID_HOME` ou `ANDROID_SDK_ROOT`;
+- emulador Android ou dispositivo Android físico;
+- Chrome instalado no dispositivo Android.
 
-If `adb devices` does not show a connected device with status `device`, the mobile suite cannot be executed locally.
+Se o comando `adb devices` não exibir um dispositivo conectado com status `device`, a suíte mobile não poderá ser executada localmente.

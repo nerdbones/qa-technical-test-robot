@@ -1,4 +1,4 @@
-# Bug Report
+# Relatório de Bug
 
 ## BUG-001 - Sistema permite tentativa de criação de equipamento sem título
 
@@ -25,13 +25,14 @@ O sistema deve bloquear o salvamento e exibir uma mensagem clara informando que 
 
 ## Resultado obtido
 
-Durante a análise do fluxo, foi identificada a necessidade de validação obrigatória para o campo título. A API do Notes App já possui regra de proteção para campos obrigatórios e retorna mensagem de validação quando título, descrição ou categoria são enviados vazios. O ponto deve ser validado também pela interface para garantir consistência entre frontend e backend.
+Durante a análise do fluxo, foi identificada a necessidade de validação obrigatória para o campo título. A API do Notes App possui regra de proteção para campos obrigatórios e retorna mensagem de validação quando título, descrição ou categoria são enviados vazios. O comportamento deve ser validado também pela interface para garantir consistência entre frontend e backend.
 
 ## Evidências
 
 - Evidência esperada em execução manual: screenshot da tela de criação com mensagem de campo obrigatório.
 - Evidência esperada em execução automatizada/API: retorno HTTP 400 com mensagem de validação.
-- Diretório sugerido para evidências: `results/` e `docs/evidence/`.
+- Diretório sugerido para evidências locais: `results/`.
+- Evidências em CI: artefatos publicados pelo GitHub Actions.
 
 ## Impacto
 
@@ -39,4 +40,4 @@ Registros sem título prejudicam busca, rastreabilidade, manutenção da listage
 
 ## Recomendação
 
-Adicionar ou reforçar validação client-side para impedir envio do formulário quando o título estiver vazio, mantendo a mesma regra já esperada no backend.
+Adicionar ou reforçar validação client-side para impedir envio do formulário quando o título estiver vazio, mantendo a mesma regra esperada no backend.

@@ -1,12 +1,14 @@
 # QA Technical Test Robot
 
-Projeto de automação de testes construído com **Robot Framework**, **Browser Library/Playwright** e **Appium**, com foco em organização, reutilização de keywords, execução multiambiente e massa dinâmica.
+Projeto demonstrativo de **qualidade de software e automação de testes** construído com **Robot Framework**, **Browser Library/Playwright** e **Appium**.
 
-O projeto foi criado de forma genérica para desafios técnicos de QA, sem referência direta a uma empresa específica.
+A proposta do repositório é apresentar uma solução completa e reutilizável para validação de um fluxo de cadastro/listagem de equipamentos, cobrindo documentação de testes manuais, automação web, automação mobile, massa dinâmica, execução multiambiente, evidências e pipeline CI/CD.
+
+O projeto foi estruturado de forma genérica para poder ser reutilizado como referência em cenários semelhantes de QA, sem dependência de documentos externos ao repositório.
 
 ## Objetivo
 
-Demonstrar uma solução de qualidade para um fluxo de cadastro/listagem de equipamentos, contemplando:
+Demonstrar uma estratégia de QA para um fluxo funcional de equipamentos, contemplando:
 
 - testes manuais documentados;
 - automação web com Robot Framework + Browser Library;
@@ -19,18 +21,20 @@ Demonstrar uma solução de qualidade para um fluxo de cadastro/listagem de equi
 
 ## Sistema sob teste
 
-Como o desafio não fornece uma aplicação real nem URLs específicas para QA1, QA2 e QA3, o projeto utiliza o **ExpandTesting Notes App** como sistema sob teste:
+O projeto utiliza o site público de prática de automação **ExpandTesting Notes App** como sistema sob avaliação:
 
 ```text
 https://practice.expandtesting.com/notes/app
 ```
 
-Neste projeto, cada nota representa um equipamento.
+Como o Notes App trabalha com notas, o domínio funcional foi adaptado da seguinte forma: cada nota representa um equipamento cadastrado.
 
-| Conceito do desafio | Representação no projeto |
+| Conceito funcional | Representação no projeto |
 |---|---|
 | Equipamento | Nota no ExpandTesting Notes App |
-| Buscar equipamento | Buscar nota pelo título |
+| Nome do equipamento | Título da nota |
+| Detalhes editáveis | Descrição da nota |
+| Buscar equipamento | Consultar/validar nota pelo título |
 | Editar equipamento | Atualizar descrição da nota |
 | Validar status | Validar nota pendente/concluída |
 | QA1 | Caminhão_01 |
@@ -78,6 +82,18 @@ qa-technical-test-robot/
 └── README.md
 ```
 
+## Documentação complementar
+
+A documentação de apoio fica no diretório `docs/`:
+
+| Documento | Finalidade |
+|---|---|
+| `docs/manual-tests/test-cases.md` | Cenários de testes manuais positivos e negativos |
+| `docs/manual-tests/bug-report.md` | Exemplo de reporte de bug estruturado |
+| `docs/evidence/README.md` | Explicação sobre geração e organização de evidências |
+| `docs/evidence/execution-summary.md` | Resumo de execução e evidências esperadas |
+| `docs/technical-decisions.md` | Decisões técnicas, limitações e melhorias futuras |
+
 ## Estratégia multiambiente
 
 Os ambientes são definidos em `config/environments.yaml`.
@@ -113,14 +129,13 @@ Caminhão_01 - 20260618183000-abcde
 
 Isso evita dependência de massa fixa e reduz risco de conflito entre execuções.
 
-
 ## Testes automatizados
 
 A suíte automatizada possui 4 testes Robot:
 
 | Arquivo | Tipo | Objetivo |
 |---|---|---|
-| `tests/web/search_equipment.robot` | Web/API | Busca/consulta do equipamento configurado e validação do dado retornado |
+| `tests/web/search_equipment.robot` | Web/API | Consulta do equipamento configurado e validação do dado retornado |
 | `tests/web/edit_equipment.robot` | Web/API | Edição da descrição do equipamento e validação na interface |
 | `tests/web/validate_equipment_status.robot` | Web/API | Alteração de status para concluído e validação visual |
 | `tests/mobile/mobile_equipment_flow.robot` | Mobile/Appium | Smoke test mobile abrindo o ambiente configurado no Chrome Android |
@@ -298,6 +313,8 @@ results/web/QA3
 results/mobile/QA1
 ```
 
+Os arquivos gerados em `results/` não são versionados. Em CI, os relatórios web são publicados como artefatos do GitHub Actions.
+
 ## Testes manuais
 
 Os cenários manuais estão documentados em:
@@ -313,7 +330,7 @@ O material contempla:
 - 4 cenários negativos;
 - 1 reporte de bug;
 - regras de negócio assumidas;
-- mapeamento entre o domínio do desafio e o ExpandTesting Notes App.
+- mapeamento entre o domínio funcional de equipamentos e o ExpandTesting Notes App.
 
 ## Pipeline CI/CD
 
@@ -362,7 +379,6 @@ As decisões de arquitetura, limitações e melhorias futuras estão descritas e
 ```text
 docs/technical-decisions.md
 ```
-
 
 ## Observação sobre dry-run
 

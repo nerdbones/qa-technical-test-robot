@@ -29,10 +29,10 @@ Prepare Equipment Test Data
 
 Search Equipment Record
     [Arguments]    ${title}
-    # The public Notes UI may render the same title inside both title and
-    # description areas. To avoid Browser Library strict-mode ambiguity, this
-    # keyword validates the searched record via API and then targets only the
-    # note-card title in the UI.
+    # A interface pública do Notes pode renderizar o mesmo título no campo de título
+    # e também na descrição. Para evitar ambiguidade no modo estrito da Browser Library,
+    # esta keyword valida o registro consultado via API e depois aponta especificamente
+    # para o título do card da nota na interface.
     ${response}=    Get Note Through Api    ${API_URL}    ${API_TOKEN}    ${NOTE_ID}
     ${data}=        Get From Dictionary    ${response}    data
     ${api_title}=   Get From Dictionary    ${data}        title

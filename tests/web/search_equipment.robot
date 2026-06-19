@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Web validation for environment-based equipment search using ExpandTesting Notes App.
+Documentation     Validação web da consulta de equipamento por ambiente usando o ExpandTesting Notes App.
 Resource          ../../resources/variables/default_variables.resource
 Resource          ../../resources/keywords/auth_keywords.resource
 Resource          ../../resources/keywords/equipment_keywords.resource
@@ -11,8 +11,8 @@ Force Tags        web    browser    environment
 ${ENV}    QA1
 
 *** Test Cases ***
-Search Equipment By Environment Data
-    [Documentation]    Validates URL, dynamic mass and returned data for the selected environment.
+Consultar Equipamento Por Massa Do Ambiente
+    [Documentation]    Valida a URL, a massa dinâmica e o dado retornado para o ambiente selecionado.
     Search Equipment Record          ${DYNAMIC_EQUIPMENT_NAME}
     Validate Equipment Is Displayed  ${DYNAMIC_EQUIPMENT_NAME}
     Validate Equipment Through Api

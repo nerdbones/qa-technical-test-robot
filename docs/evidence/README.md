@@ -6,10 +6,10 @@ As evidências são geradas automaticamente pelo Robot Framework durante a execu
 
 Para cada ambiente executado, o projeto gera:
 
-- `log.html`
-- `report.html`
-- `output.xml`
-- screenshots capturados durante as validações principais
+- `log.html`;
+- `report.html`;
+- `output.xml`;
+- screenshots capturados durante as validações principais.
 
 ## Estrutura esperada
 
@@ -25,6 +25,8 @@ results/
     └── QA3/
 ```
 
-## Observação
+## Versionamento das evidências
 
-Os arquivos dentro de `results/` são ignorados pelo Git para evitar versionar artefatos grandes ou temporários. Para envio da entrega, recomenda-se executar os testes e anexar os relatórios gerados como evidência complementar ou disponibilizá-los como artefato da pipeline.
+Os arquivos gerados dentro de `results/` são ignorados pelo Git para evitar versionamento de relatórios temporários, screenshots e artefatos pesados.
+
+Em execuções locais, as evidências podem ser consultadas diretamente na pasta `results/`. Em CI, os relatórios web são disponibilizados como artefatos do GitHub Actions.

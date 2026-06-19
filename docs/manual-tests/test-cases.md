@@ -1,17 +1,19 @@
-# Manual Test Scenarios
+# Cenários de Testes Manuais
 
 ## Contexto
 
-Este documento descreve os cenários manuais do fluxo de cadastro/listagem de equipamentos solicitado no desafio técnico.
+Este documento descreve cenários manuais para um fluxo funcional de cadastro/listagem de equipamentos.
 
-Como não foi fornecida uma aplicação real de equipamentos, o projeto utiliza o **ExpandTesting Notes App** como sistema sob teste. Neste contexto, cada nota representa um equipamento cadastrado.
+O projeto utiliza o **ExpandTesting Notes App** como sistema sob teste. Neste contexto, cada nota representa um equipamento cadastrado.
 
 ## Mapeamento funcional
 
-| Requisito original | Implementação no projeto |
+| Conceito funcional | Implementação no projeto |
 |---|---|
 | Equipamento | Nota no ExpandTesting Notes App |
-| Buscar equipamento | Buscar nota pelo título |
+| Nome do equipamento | Título da nota |
+| Detalhes editáveis | Descrição da nota |
+| Buscar equipamento | Consultar/validar nota pelo título |
 | Editar equipamento | Atualizar descrição/status da nota |
 | Validar status | Validar nota pendente/concluída |
 | QA1 | Caminhão_01 |
@@ -24,7 +26,7 @@ Como não foi fornecida uma aplicação real de equipamentos, o projeto utiliza 
 2. O equipamento deve possuir título/nome, descrição, categoria e status.
 3. O nome do equipamento deve possuir entre 4 e 100 caracteres.
 4. Equipamentos podem estar pendentes ou concluídos.
-5. A busca deve retornar apenas registros compatíveis com o termo pesquisado.
+5. A consulta deve retornar o registro compatível com o equipamento esperado para o ambiente.
 6. O sistema deve impedir criação/edição com campos obrigatórios vazios.
 
 ---
@@ -38,7 +40,7 @@ Como não foi fornecida uma aplicação real de equipamentos, o projeto utiliza 
 **Passos:**
 1. Acessar o ExpandTesting Notes App configurado para QA1.
 2. Realizar login com usuário válido.
-3. Informar `Caminhão_01` no campo de busca.
+3. Consultar o registro referente a `Caminhão_01`.
 4. Observar a listagem retornada.
 
 **Resultado esperado:** O sistema deve exibir o registro correspondente ao equipamento `Caminhão_01`, sem retornar equipamentos de outros ambientes.
@@ -52,7 +54,7 @@ Como não foi fornecida uma aplicação real de equipamentos, o projeto utiliza 
 **Passos:**
 1. Acessar o ExpandTesting Notes App configurado para QA2.
 2. Realizar login com usuário válido.
-3. Informar `Caminhão_02` no campo de busca.
+3. Consultar o registro referente a `Caminhão_02`.
 4. Observar a listagem retornada.
 
 **Resultado esperado:** O sistema deve exibir o registro correspondente ao equipamento `Caminhão_02`, usando a massa configurada para QA2.
@@ -66,7 +68,7 @@ Como não foi fornecida uma aplicação real de equipamentos, o projeto utiliza 
 **Passos:**
 1. Acessar o ExpandTesting Notes App configurado para QA3.
 2. Realizar login com usuário válido.
-3. Informar `Caminhão_03` no campo de busca.
+3. Consultar o registro referente a `Caminhão_03`.
 4. Observar a listagem retornada.
 
 **Resultado esperado:** O sistema deve exibir o registro correspondente ao equipamento `Caminhão_03`, usando a massa configurada para QA3.
@@ -123,7 +125,7 @@ Como não foi fornecida uma aplicação real de equipamentos, o projeto utiliza 
 
 **Passos:**
 1. Acessar a listagem de equipamentos.
-2. Informar `Equipamento_Inexistente` no campo de busca.
+2. Consultar `Equipamento_Inexistente`.
 3. Observar a listagem retornada.
 
 **Resultado esperado:** O sistema deve informar que nenhum registro foi encontrado ou exibir a listagem vazia, sem retornar equipamentos incorretos.

@@ -12,7 +12,7 @@ Open Notes Application
 
 Login Through Web
     [Arguments]    ${email}    ${password}
-    # Direct login URL is more stable than relying on the landing-page link text.
+    # A URL direta de login é mais estável do que depender do texto do link na página inicial.
     Go To                      ${LOGIN_URL}
     Wait For Elements State    ${LOGIN_EMAIL_FIELD}       visible    timeout=${TIMEOUT}
     Fill Text                  ${LOGIN_EMAIL_FIELD}       ${email}

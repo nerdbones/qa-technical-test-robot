@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Web validation for equipment status using ExpandTesting Notes App.
+Documentation     Validação web do status de equipamento usando o ExpandTesting Notes App.
 Resource          ../../resources/variables/default_variables.resource
 Resource          ../../resources/keywords/auth_keywords.resource
 Resource          ../../resources/keywords/equipment_keywords.resource
@@ -11,8 +11,8 @@ Force Tags        web    browser    status
 ${ENV}    QA1
 
 *** Test Cases ***
-Validate Equipment Status Change
-    [Documentation]    Validates that the configured equipment can be marked as completed for the selected environment.
+Validar Alteracao De Status Do Equipamento
+    [Documentation]    Valida que o equipamento configurado pode ser marcado como concluído para o ambiente selecionado.
     Mark Equipment As Completed Through Api And Validate On Web
 
 *** Keywords ***

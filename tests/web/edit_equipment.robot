@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Web validation for equipment editing using ExpandTesting Notes App.
+Documentation     Validação web da edição de equipamento usando o ExpandTesting Notes App.
 Resource          ../../resources/variables/default_variables.resource
 Resource          ../../resources/keywords/auth_keywords.resource
 Resource          ../../resources/keywords/common_keywords.resource
@@ -12,8 +12,8 @@ Force Tags        web    browser    edit
 ${ENV}    QA1
 
 *** Test Cases ***
-Edit Equipment Data
-    [Documentation]    Validates that the equipment record can be updated without changing test code for each environment.
+Editar Dados Do Equipamento
+    [Documentation]    Valida que o registro do equipamento pode ser atualizado sem alterar o código do teste para cada ambiente.
     ${updated_description}=    Build Updated Equipment Description    ${ENV}    ${DYNAMIC_EQUIPMENT_NAME}
     Edit Equipment Description Through Api And Validate On Web    ${updated_description}
 

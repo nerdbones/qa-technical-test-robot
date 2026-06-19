@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Mobile smoke validation using Appium and the same environment configuration used by web tests.
+Documentation     Smoke test mobile usando Appium e a mesma configuração de ambiente utilizada nos testes web.
 Resource          ../../resources/variables/default_variables.resource
 Resource          ../../resources/keywords/environment_keywords.resource
 Resource          ../../resources/keywords/mobile_keywords.resource
@@ -11,8 +11,8 @@ Force Tags        mobile    appium    smoke
 ${ENV}    QA1
 
 *** Test Cases ***
-Open Notes App On Mobile Environment
-    [Documentation]    Opens the configured environment URL in Android Chrome through Appium.
+Abrir Aplicacao No Ambiente Mobile
+    [Documentation]    Abre a URL configurada para o ambiente no Chrome Android por meio do Appium.
     Validate Mobile Page Is Open
 
 *** Keywords ***
