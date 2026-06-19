@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+
+results/*
+!results/.gitkeep
+
+log.html
+report.html
+output.xml
+selenium-screenshot-*.png
+playwright-log.txt
+
+.env
+.DS_Store
+.idea/
+.vscode/

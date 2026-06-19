@@ -1,0 +1,44 @@
+name: Robot Web Tests
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  web-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        environment: [QA1, QA2, QA3]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          rfbrowser init
+
+      - name: Run Robot web tests
+        run: |
+          robot -d results/web/${{ matrix.environment }} -v ENV:${{ matrix.environment }} -v HEADLESS:True tests/web
+
+      - name: Upload Robot results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: robot-results-${{ matrix.environment }}
+          path: results/web/${{ matrix.environment }}

@@ -1,0 +1,10 @@
+*** Variables ***
+${ADD_NOTE_BUTTON}             css=button[data-testid="add-new-note"]
+${NOTE_TITLE_FIELD}            css=input[data-testid="note-title"]
+${NOTE_DESCRIPTION_FIELD}      css=textarea[data-testid="note-description"]
+${NOTE_CATEGORY_FIELD}         css=select[data-testid="note-category"]
+${NOTE_COMPLETED_CHECKBOX}     css=input[data-testid="note-completed"]
+${SAVE_NOTE_BUTTON}            css=button[data-testid="note-submit"]
+${NOTE_STATUS_TOGGLE}          css=input[data-testid="toggle-note-switch"]
+${NOTE_VIEW_LINK}              xpath=//a[contains(.,'View')]
+${NOTE_CARD_TITLE}             xpath=//div[contains(@class,'card') or contains(@data-testid,'note')]

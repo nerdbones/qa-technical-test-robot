@@ -1,0 +1,6 @@
+default:
+  description_prefix: "Registro criado automaticamente pela automação Robot Framework"
+  updated_description_prefix: "Registro atualizado automaticamente pela automação Robot Framework"
+  password: "Robot@12345"
+  email_domain: "example.com"
+  tester_name: "Robot QA User"

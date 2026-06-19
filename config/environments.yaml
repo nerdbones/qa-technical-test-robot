@@ -1,0 +1,35 @@
+QA1:
+  base_url: "https://practice.expandtesting.com/notes/app?env=QA1"
+  login_url: "https://practice.expandtesting.com/notes/app/login"
+  mobile_url: "https://practice.expandtesting.com/notes/app?env=QA1"
+  api_url: "https://practice.expandtesting.com/notes/api"
+  equipment_name: "Caminhão_01"
+  category: "Home"
+  initial_completed: false
+  updated_completed: true
+  initial_status_label: "Pending"
+  updated_status_label: "Completed"
+
+QA2:
+  base_url: "https://practice.expandtesting.com/notes/app?env=QA2"
+  login_url: "https://practice.expandtesting.com/notes/app/login"
+  mobile_url: "https://practice.expandtesting.com/notes/app?env=QA2"
+  api_url: "https://practice.expandtesting.com/notes/api"
+  equipment_name: "Caminhão_02"
+  category: "Work"
+  initial_completed: false
+  updated_completed: true
+  initial_status_label: "Pending"
+  updated_status_label: "Completed"
+
+QA3:
+  base_url: "https://practice.expandtesting.com/notes/app?env=QA3"
+  login_url: "https://practice.expandtesting.com/notes/app/login"
+  mobile_url: "https://practice.expandtesting.com/notes/app?env=QA3"
+  api_url: "https://practice.expandtesting.com/notes/api"
+  equipment_name: "Caminhão_03"
+  category: "Personal"
+  initial_completed: false
+  updated_completed: true
+  initial_status_label: "Pending"
+  updated_status_label: "Completed"
